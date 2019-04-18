@@ -7,7 +7,7 @@
 #define RUNNING 3
 #define EXIT 4
 
-instancetime=0,runningtime=0,EXITED=0,Context_Switch_Allowed=1,n,i,j;
+int instancetime=0,runningtime=0,EXITED=0,Context_Switch_Allowed=1,n,i,j;
 struct Process 
 {
 	int pid;
