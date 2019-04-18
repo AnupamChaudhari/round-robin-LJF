@@ -7,7 +7,7 @@
 #define RUNNING 3
 #define EXIT 4
 
-int instancetime=0,runningtime=0,EXITED=0,Context_Switch_Allowed=1,n;
+instancetime=0,runningtime=0,EXITED=0,Context_Switch_Allowed=1,n,i,j;
 struct Process 
 {
 	int pid;
@@ -160,7 +160,7 @@ struct Process *  get_from_queue()
 void up_queue()
 {
 int count=0;
-           for(int i=0;i<n;i++)
+           for(i=0;i<n;i++)
 	   {
                    
 		   if(process_array[i].state == NEW && instancetime>=process_array[i].at)
@@ -184,7 +184,7 @@ int count=0;
 void up_queue1()
 {
 int count=0;
-           for(int i=0;i<n;i++)
+           for(i=0;i<n;i++)
 	   {
                    
 		   if(process_array1[i].state == NEW && instancetime>=process_array1[i].at)
@@ -215,7 +215,7 @@ Ready =(struct Queue*) malloc(sizeof(struct Queue));
 	scanf("%d",&n);
 	process_array=(struct Process *)malloc(sizeof(struct Process)*n);
 	process_array1=(struct Process *)malloc(sizeof(struct Process)*n);
-	for(int i=0;i<n;i++)
+	for(i=0;i<n;i++)
 	{
              printf("\n\n Enter Process Id For %d Process",(i+1));
 	     scanf("%d",&(process_array[i].pid));
@@ -229,7 +229,7 @@ Ready =(struct Queue*) malloc(sizeof(struct Queue));
 	        
 	}
  struct Process key; 
-    int i,j;
+    
     for (i = 1; i < n; i++) { 
         key = process_array[i]; 
         j = i - 1; 
@@ -393,7 +393,7 @@ instancetime++;
 }
 printf("Run Using LJF");
 int sumwt=0,sumtat=0,sumsjt=0,sumsjw=0;
-for(int i=0;i<n;i++)
+for(i=0;i<n;i++)
 	{
            printf("\n\nprocess pid=%d\nct=%d\ntat=%d\nwt=%d",process_array[i].pid,process_array[i].ct,process_array[i].tat,process_array[i].wt);
            sumwt+=process_array[i].wt;
